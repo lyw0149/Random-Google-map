@@ -165,6 +165,9 @@
           mapTypeControl: false
         });
 
+        map.addListener('zoom_changed', function() {
+           map.setOptions({styles: randomStyleGenerator()});
+        });
         var homeControlDiv = document.createElement('div');
         var homeControl = new RandomizeControl(homeControlDiv, map);
 
@@ -175,7 +178,7 @@
 
     <script async defer
         src=
-        "https://maps.googleapis.com/maps/api/js?key=&v=3&callback=initMap">
+        "https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
     </script>
 
   </body>
